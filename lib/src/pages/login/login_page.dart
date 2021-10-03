@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
         child: ElevatedButton(
-          onPressed: _con.loguin,
+          onPressed: _con.login,
           child: Text('Ingresar'),
           style: ElevatedButton.styleFrom(
               primary: Mycolors.primaryColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pico_de_oro/src/pages/client/products/list/client_products_list_pages.dart';
 import 'package:pico_de_oro/src/pages/login/login_page.dart';
 import 'package:pico_de_oro/src/pages/register/register_page.dart';
 import 'src/pages/register/register_page.dart';
@@ -22,7 +23,9 @@ class _MyAppState extends State<MyApp> {
       initialRoute: 'login',
       routes: {
         'login': (BuildContext context) => LoginPage(),
-        'register': (BuildContext context) => RegisterPage()
+        'register': (BuildContext context) => RegisterPage(),
+        'client/products/list': (BuildContext context) =>
+            ClientProductListPage(),
       },
     );
   }

@@ -20,7 +20,7 @@ class ResponseApi {
   ResponseApi.fromJson(Map<String, dynamic> json) {
     message = json["message"];
     error = json["error"];
-    success = json["succsses"];
+    success = json["success"];
 
     try {
       data = json['data'];
@@ -32,6 +32,7 @@ class ResponseApi {
   Map<String, dynamic> toJson() => {
         "message": message,
         "error": error,
-        "succsses": success,
+        "success": success,
+        "data": data,
       };
 }

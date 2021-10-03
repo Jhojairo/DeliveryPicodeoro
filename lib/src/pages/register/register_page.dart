@@ -11,6 +11,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+
   RegisterController _con = new RegisterController();
 
   @override
@@ -31,8 +32,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
         child: Stack(
           children: [
-            Positioned(top: 65, left: 27, child: _textregister()),
-            Positioned(top: 51, left: -5, child: _iconback()),
+            Positioned(
+                top: 63,
+                left: 15,
+                child: _textregister() ),
+
             Container(
               width: double.infinity,
               margin: EdgeInsets.only(top: 50),
@@ -40,6 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 //SingleChildScrollView es para que no salga error de overfloat aal momento de escrivir en los campos de texto
                 child: Column(
                   children: [
+                    _iconback(),
                     _imageBaner(),
                     _imageuser(),
                     _textfieldemail(),
@@ -69,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _textregister() {
     return Text(
-      'Registrate',
+      ' Atras',
       style: TextStyle(
           color: Colors.red,
           fontWeight: FontWeight.bold,
@@ -79,7 +84,10 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _iconback() {
-    return IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios));
+    return IconButton(
+      padding: EdgeInsets.only(left:5,right:500),
+        onPressed: _con.back ,
+        icon: Icon(Icons.arrow_back_ios));
   }
 
   Widget _imageBaner() {

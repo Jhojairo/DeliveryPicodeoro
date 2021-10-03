@@ -59,4 +59,8 @@ MySnackbar.show(context, 'Por Favor ingresa todos los campos ');
     print(password);
     print(confirmpassword);
   }
+  void back () {
+    Navigator.pop(context);
+
+}
 }
