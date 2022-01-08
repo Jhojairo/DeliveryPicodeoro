@@ -1,5 +1,7 @@
 import 'package:meta/meta.dart';
 import 'dart:convert';
+
+import 'package:pico_de_oro/src/models/rol.dart';
 /*
 metodowue recive un strin y retorna un objeto tipoo user
  */
@@ -19,6 +21,8 @@ class User {
   String password;
   String sessionToken;
   String image;
+  List<Rol> roles =[];
+  List<User> toList=[];
 
 
     /* *este es el constructor del la tabla user */
@@ -31,13 +35,14 @@ class User {
     @required this.password,
     @required this.sessionToken,
     @required this.image,
+    this.roles
   });
 
 /* * metodo que recive un mapa de valores un json que retorna objeto  tipo user
 * */
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    id: json["id"],
+    id: json["id"] is int ? json['id'].toString(): json["id"],
     name: json["name"],
     lastname: json["lastname"],
     email: json["email"],
@@ -45,7 +50,16 @@ class User {
     password: json["password"],
     sessionToken: json["session_token"],
     image: json["image"],
+    roles: json["roles"]== null ? []: List<Rol>.from(json['roles'].map((model) => Rol.fromJson(model))) ?? [],
   );
+
+  User.fromJsonList(List<dynamic> jsonList) {
+    if (jsonList == null) return;
+    jsonList.forEach((item) {
+      User user = User.fromJson(item);
+      toList.add(user);
+    });
+  }
 /*
 transforma el objeto ...objeto tojson q toma el objeto user y lo transforma en json
  */
@@ -58,5 +72,8 @@ transforma el objeto ...objeto tojson q toma el objeto user y lo transforma en j
     "password": password,
     "session_token": sessionToken,
     "image": image,
+    "roles": roles,
+
+
   };
 }

@@ -22,8 +22,14 @@ class LoginController {
     print('Usuario : ${user.toJson()}');
 
    if(user?.sessionToken!= null){
-    Navigator.pushNamedAndRemoveUntil(context, 'client/products/list', (route) => false);
+     if (user.roles.length >1) {
+       Navigator.pushNamedAndRemoveUntil(context, 'roles', (route) => false);
+     }
+     else{
 
+       Navigator.pushNamedAndRemoveUntil(context, user.roles[0].route, (route) => false);
+
+     }
     }
   }
 
@@ -42,8 +48,17 @@ class LoginController {
     if (responseApi.success) {
       User user = User.fromJson(responseApi.data); // responseApi. data regresa un mapa de valores
       _sharedPref.save('user', user.toJson());
-      Navigator.pushNamedAndRemoveUntil(context, 'client/products/list', (route) => false);
-    } else {
+      print ('usuario logeado : ${responseApi.toJson()}');
+      if (user.roles.length >1) {
+        Navigator.pushNamedAndRemoveUntil(context, 'roles', (route) => false);
+      }
+      else{
+
+        Navigator.pushNamedAndRemoveUntil(context, user.roles[0].route, (route) => false);
+
+      }
+    }
+    else {
       MySnackbar.show(context, responseApi.message);
     }
 

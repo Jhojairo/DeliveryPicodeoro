@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Mycolors.backgrund,
+        backgroundColor: MyColors.backgrund,
         body: Container(
           width: double.infinity,
           child: SingleChildScrollView(
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       decoration: BoxDecoration(
-          color: Mycolors.primaryOpacityColor,
+          color: MyColors.primaryOpacityColor,
           borderRadius: BorderRadius.circular(30)),
       child: TextField(
         controller: _con.emailcontroller,
@@ -68,10 +68,10 @@ class _LoginPageState extends State<LoginPage> {
             hintText: 'Correo Electronico',
             border: InputBorder.none,
             contentPadding: EdgeInsets.all(15),
-            hintStyle: TextStyle(color: Mycolors.secundaryColordark),
+            hintStyle: TextStyle(color: MyColors.secundaryColordark),
             prefixIcon: Icon(
               Icons.email,
-              color: Mycolors.primaryColor,
+              color: MyColors.primaryColor,
             )),
       ),
     );
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       decoration: BoxDecoration(
-          color: Mycolors.primaryOpacityColor,
+          color: MyColors.primaryOpacityColor,
           borderRadius: BorderRadius.circular(30)),
       child: TextField(
         controller: _con.passwordcontroller,
@@ -91,10 +91,10 @@ class _LoginPageState extends State<LoginPage> {
             hintText: 'password',
             border: InputBorder.none,
             contentPadding: EdgeInsets.all(15),
-            hintStyle: TextStyle(color: Mycolors.secundaryColordark),
+            hintStyle: TextStyle(color: MyColors.secundaryColordark),
             prefixIcon: Icon(
               Icons.lock,
-              color: Mycolors.primaryColor,
+              color: MyColors.primaryColor,
             )),
       ),
     );
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         Text(
           'No tienes Cuenta?',
-          style: TextStyle(color: Mycolors.primaryColor),
+          style: TextStyle(color: MyColors.primaryColor),
         ),
         SizedBox(
           width: 7,
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Text(
             'Registrate',
             style: TextStyle(
-                fontWeight: FontWeight.bold, color: Mycolors.primaryColor),
+                fontWeight: FontWeight.bold, color: MyColors.primaryColor),
           ),
         )
       ],
@@ -131,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: _con.login,
           child: Text('Ingresar'),
           style: ElevatedButton.styleFrom(
-              primary: Mycolors.primaryColor,
+              primary: MyColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
               padding: EdgeInsets.symmetric(vertical: 15)),

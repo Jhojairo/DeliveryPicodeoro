@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pico_de_oro">
+    package="com.delivery.restaurant.pico">
 
        <uses-permission android:name= "android.permission.INTERNET"/>
 
@@ -32,7 +32,8 @@
               android:name="io.flutter.embedding.android.SplashScreenDrawable"
               android:resource="@drawable/launch_background"
               />
-            <intent-filter>
+
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
@@ -42,5 +43,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-    </application>
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDJ7leAX85QWJM89zGFr7ZbxLn3zrydTfY"/>
+
+   </application>
 </manifest>
